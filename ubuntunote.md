@@ -40,13 +40,38 @@ sudo apt-get remove onboard deja-dup
 sudo apt-get install vim
 
 5. 安装搜狗拼音
-安装 fcitx,可以
+安装 fcitx,可以在商店安装。
+下载安装包，并安装。
+设置中将键盘布局改为fcitx，注销系统，打开fcitx　config 选择搜狗拼音。
+
 
 ## 命令记录
 
+>sudo dpkg -i (安装包)
+
 >删除非空文件夹　rm -rf (folder)
+
 >移动文件　cp (filename1) (filename2)
+
 >git 配置用户名与邮箱　git config --global user.name user.email
+
 >git config --list
 
+>apt-get purge / apt-get --purge remove 
+删除已安装包（不保留配置文件)。 
+如软件包a，依赖软件包b，则执行该命令会删除a，而且不保留配置文件
 
+>apt-get autoremove 
+删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件。
+
+>apt-get remove 
+删除已安装的软件包（保留配置文件），不会删除依赖软件包，且保留配置文件。
+
+>apt-get autoclean 
+APT的底层包是dpkg, 而dpkg 安装Package时, 会将 *.deb 放在 /var/cache/apt/archives/中，apt-get autoclean 只会删除 /var/cache/apt/archives/ 已经过期的deb。
+
+>apt-get clean 
+使用 apt-get clean 会将 /var/cache/apt/archives/ 的 所有 deb 删掉，可以理解为 rm /var/cache/apt/archives/*.deb。
+
+
+## vi/vim学习
